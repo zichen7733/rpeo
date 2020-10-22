@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            background-color: #354C99;
+        }
+        /* -----------导航栏开始----------- */
+        
+        .nav {
+            position: fixed;
+            top: -10px;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, .8);
+            border-bottom: 2px solid red;
+            border-color: rgba(64, 206, 255, 0.84);
+            box-shadow: rgba(1, 1, 1, 0.3) 0px 2px 10px 0px;
+            z-index: 10;
+        }
+        
+        .box {
+            position: relative;
+            z-index: 1;
+            width: 1509px;
+            height: 2000px;
+            margin: 0 auto;
+        }
+        
+        .nav .nav_top {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            width: 1509px;
+            height: 100px;
+            margin: 0 auto;
+            z-index: 10;
+        }
+        
+        .nav_top #left {
+            margin-left: -50px;
+            width: 900px;
+        }
+        
+        .nav .nav_top #left span {
+            display: inline-block;
+            margin-top: 30px;
+            margin-right: 40px;
+            width: 130px;
+            height: 60px;
+            text-align: center;
+        }
+        
+        .nav_top #left span a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .4);
+        }
+        
+        .nav_top #left a em {
+            font-size: 22px;
+            color: #62eaf5;
+        }
+        
+        .nav_top #left a em:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        .nav_top #right {
+            margin-right: 150px;
+            width: 400px;
+        }
+        
+        .nav_top #right span {
+            width: 200px;
+        }
+        
+        #left span a {
+            text-align: center;
+            line-height: 25px;
+            font-size: 23px;
+            font-weight: 700;
+            color: rgb(98, 234, 245);
+            margin-right: 20px;
+        }
+        
+        #right span a {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 32px;
+            color: rgba(255, 255, 255, .4);
+        }
+        
+        #right span a em {
+            font-size: 15px;
+            color: rgb(98, 234, 245);
+        }
+        
+        #right span a em:hover {
+            color: #fff;
+        }
+        
+        .nav .nav_top #left span:nth-child(2n) {
+            position: absolute;
+            margin: 25px -44px;
+            width: 40px;
+        }
+        
+        .nav .nav_top #left span img {
+            width: 30px;
+        }
+        /* -----------------导航栏结束----------------- */
+        
+        .content {
+            position: relative;
+            width: 1903px;
+            height: 2000px;
+            margin: 0 auto;
+            background: url(images3/zz_bg.jpg) no-repeat;
+        }
+        
+        .title {
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .title em {
+            font-size: 45px;
+            color: #9C9C9C;
+        }
+        /* -------------资讯开始------------ */
+        
+        .content .news {
+            position: absolute;
+            background-color: rgba(15, 20, 97, .9);
+            width: 1224px;
+            height: 2000px;
+            border: 6px solid rgba(255, 255, 255, .2);
+            border-radius: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 400px;
+        }
+        
+        .content .new_title {
+            position: absolute;
+            top: 430px;
+            left: 380px;
+            width: 1000px;
+            height: 50px;
+        }
+        
+        .content .new_title span {
+            display: inline-block;
+            width: 160px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            color: #fff;
+            font-weight: 700;
+            background-color: #0097de;
+            border-radius: 10px;
+            transform: skew(-20deg);
+            margin-right: 8px;
+        }
+        
+        .content .new_title span:hover {
+            background-color: #33c8ff;
+        }
+        
+        .new_content div {
+            display: flex;
+            position: relative;
+            width: 1150px;
+            height: 140px;
+            border: 2px solid red;
+            left: 20%;
+            top: 530px;
+            margin-bottom: 30px;
+            color: #62eaf5;
+            background-color: rgba(255, 255, 255, .1);
+            border: 3px solid rgba(255, 255, 255, .1);
+            border-radius: 5px;
+        }
+        
+        .new_content {
+            display: none;
+        }
+        
+        .new_content div section {
+            margin-top: 15px;
+            margin-left: 40px;
+        }
+        
+        .new_content div h2 {
+            display: flex;
+            justify-content: space-between;
+            width: 850px;
+            height: 40px;
+        }
+        
+        .new_content div h2 em {
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .new_content div section a {
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            top: 20px;
+            left: 12px;
+            font-size: 25px;
+            color: #fff;
+            width: 830px;
+            height: 40px;
+        }
+        
+        .new_content section .line {
+            position: absolute;
+            width: 850px;
+            height: 1px;
+            border: 0;
+            background-color: rgba(98, 234, 245, .2);
+            top: 60px;
+            left: 270px;
+        }
+        
+        .new_content section .line::before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 5px;
+            background-color: #62eaf5;
+        }
+        
+        .new_content section .line::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 5px;
+            left: 100%;
+            background-color: #62eaf5;
+        }
+        /* ----------------资讯结束--------------- */
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav_top">
+            <section id="left">
+                <span><a href="案例_崩坏首页.html"><em>官网首页</em></br>HOME</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="案例_作战资讯.html"><em>作战资讯</em></br>MUSIC</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="案例_女武神.html"><em>女武神</em></br>VALKYRIES</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="javascript:;"><em>动画壁纸</em></br>WALLPAPERS</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href=""><em>官方社区</em></br>FORUM</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+            </section>
+            <section id="right">
+                <span><a href=""><em>米哈游关爱系统</em></br>HOME </a></span>
+                <span><a href=""><em>米哈游通行证</em></br>HOME</a></span>
+            </section>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title">作战咨询 /<em>NEWS</em></div>
+        <div class="news"></div>
+        <div class="new_title">
+            <span>最新</span>
+            <span>最新</span>
+            <span>最新</span>
+            <span>最新</span>
+            <span>最新</span>
+        </div>
+        <!-- 资讯开始 -->
+        <div class="new_content">
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new2.png" alt=""></a>
+                <section>
+                    <h2>《崩坏3》金立平台停止联运公告 <em>发布日期：2020-09-25</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        一直以来《崩坏3》深受舰长的支持与厚爱，运营团队由衷地感谢所有舰长对《崩坏3》的陪伴！现由于金立平台与我们的合作协议即将到期，2020年12月24日起金立平台将不再提供游戏登录的服务。
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new3.jpg" alt=""></a>
+                <section>
+                    <h2>「幻夜迷迭」4.2版本更新公告 <em>发布日期：2020-09-25</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        欢迎来到4.2版本——「幻夜迷迭」！</a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new4.png" alt=""></a>
+                <section>
+                    <h2> 封号名单（2020年10月12日） <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        《崩坏3》上线至今，制作组始终不遗余力地进行着打击外挂的行动，且多次郑重声明：《崩坏3》严禁任何不正当方式进行游戏、危害游戏公平的行为。为维护广大舰长的利益及保障游戏环境，爱酱和全体休伯利安号的工作人员会在游戏中进行7x24小时监测。对于使用外挂、第三方工具等行为我们将对其采取封禁、删档、追究法律责任等处罚措施。
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new5.png" alt=""></a>
+                <section>
+                    <h2> 狂热蓝调Δ推荐装备「批判之笔补给」特惠开启！ <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        狂热蓝调Δ推荐装备「批判之笔补给」特惠开启！至多90回补给，必出本期全套UP圣痕——「狄更斯」！
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new6.png" alt=""></a>
+                <section>
+                    <h2>「青鸟之庭」服装补给来袭！ <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        9月27日12:00~10月16日12:00，「飞鸟与梦之诗」服装补给限时开启！
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new7.jpg" alt=""></a>
+                <section>
+                    <h2>充值福利奖励更新一览 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        游戏内充值福利全面更新，奖励相关内容更加丰富！更有No.11、No.12两个新增档位奖励~
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new8.png" alt=""></a>
+                <section>
+                    <h2>「崩坏冒险谭」全服活动开启！ <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        全服活动「崩坏冒险谭」开启！参与活动可获得幻海梦蝶服装「寻梦者」、水晶*800、白金飞羽绶带、三分结晶等丰富奖励！
+                  
+                
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new9.png" alt=""></a>
+                <section>
+                    <h2>「悬赏助力」活动开启，额外获取委托材料！ <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        「悬赏助力」任务开放，完成任务可获取空间透镜、时序通行证、以太燃素！
+                       </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new10.png" alt=""></a>
+                <section>
+                    <h2> 全新武装人偶「特斯拉Zero」登场！ <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 
+                        全新武装人偶「特斯拉Zero」前来助战！活动期间通关活动关卡、完成指定任务，即可获得高级技能材料、特级学习芯片等奖励！
+                       </a>
+                </section>
+            </div>
+
+
+        </div>
+
+        <div class="new_content">
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="new_content">
+
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>3333「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+        </div>
+
+
+
+
+        <div class="new_content">
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>4444「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="new_content">
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>5555「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>2222「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+            <div>
+                <a href=""><img src="images3/new1.jpg" alt=""></a>
+                <section>
+                    <h2>「异色狂潮」4.3版本更新公告 <em>发布日期：2020-09-26</em></h2>
+                    <div class="line"></div>
+                    <a href=""> 欢迎来到4.3版本——「异色狂潮」！ </a>
+                </section>
+            </div>
+        </div>
+        <!-- 资讯结束 -->
+    </div>
+
+
+
+
+    <script>
+        var news = document.querySelector('.new_title');
+        var btn = news.querySelectorAll('span');
+
+
+        var content = document.querySelectorAll('.new_content')
+        console.log(content);
+        content[0].style.display = 'block';
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].setAttribute('index', i);
+            btn[i].onclick = function() {
+                var index = this.getAttribute('index');
+                for (var i = 0; i < btn.length; i++) {
+                    content[i].style.display = 'none';
+                    btn[i].style.backgroundColor = ' #0097de';
+                    btn[i].style.color = '#fff';
+                }
+                content[index].style.display = 'block';
+                btn[index].style.backgroundColor = '#fff';
+                btn[index].style.color = '#0097de';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

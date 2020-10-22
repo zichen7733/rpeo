@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            background-color: #EAEAEA;
+        }
+        
+        .content {
+            position: relative;
+            width: 1000px;
+            height: 1300px;
+            margin: 0 auto;
+        }
+        
+        .content span {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50px;
+        }
+        
+        .content span img {
+            width: 250px;
+        }
+        
+        .content .load {
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            transform: translateX(-50%);
+            width: 650px;
+            height: 700px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        .content .load span {
+            display: inline-block;
+            position: relative;
+            left: 80px;
+            top: 26px;
+            width: 160px;
+            height: 50px;
+            font-size: 25px;
+            text-align: center;
+            line-height: 40px;
+            border: 0;
+        }
+        
+        .content .load div {
+            position: relative;
+            left: 160px;
+            top: 10px;
+            width: 325px;
+            height: 80px;
+            border: 0;
+            border-bottom: 1px solid #B3B3B3;
+        }
+        
+        .content .load .chose {
+            border-bottom: 5px solid #4ea4dc;
+            font-weight: 700;
+            color: #4ea4dc;
+        }
+        
+        .content form {
+            display: none;
+        }
+        
+        .content form input {
+            position: relative;
+            left: 333px;
+            top: 350px;
+            width: 325px;
+            height: 40px;
+            font-size: 24px;
+            list-style: none;
+            outline: none;
+            border: 0;
+            border-bottom: 1px solid #B3B3B3;
+            font-family: Arial;
+            font-weight: lighter;
+            margin-bottom: 50px;
+            background-color: transparent;
+        }
+        
+        .content form button {
+            position: absolute;
+            left: 550px;
+            top: 405px;
+            width: 110px;
+            height: 30px;
+            font-size: 18px;
+            color: #4ea4dc;
+            font-weight: lighter;
+            border: 0;
+            background-color: #fff;
+            border-left: 1px solid #B3B3B3;
+            outline: none;
+        }
+        
+        .content form section {
+            width: 200px;
+            margin-bottom: -50px;
+            position: relative;
+            top: 335px;
+            left: 335px;
+            font-size: 22px;
+            font-weight: lighter;
+            color: #B3B3B3;
+        }
+        
+        .animation {
+            /* --------动画-------- */
+            animation-name: move;
+            animation-duration: 0.6s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        
+        .content form .load_btn input {
+            height: 70px;
+            color: #fff;
+            font-weight: 500;
+            border: 0;
+            border-radius: 5px;
+            background-color: #4ea4dc;
+        }
+        
+        .content form .load_btn input:hover {
+            background-color: #74D9F1;
+        }
+        
+        .content .forms {
+            display: block;
+        }
+        
+        .content .link {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            width: 325px;
+            justify-content: space-between;
+            left: 334px;
+            top: 570px;
+            font-size: 20px;
+        }
+        
+        .content .link a {
+            color: #4ea4dc;
+        }
+        
+        .content p {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: 15px;
+            height: 150px;
+            width: 327px;
+            left: 330px;
+            top: 300px;
+        }
+        
+        .content p #link1 {
+            position: absolute;
+            left: 117px;
+            top: 82px;
+        }
+        
+        .content p span {
+            display: inline-block;
+            position: relative;
+            left: 170px;
+            width: 325px;
+            color: #999;
+        }
+        
+        @keyframes move {
+            0% {}
+            100% {
+                transform: translate(-30px, -30px) scale(0.7, 0.7);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <span><img src="images3/mhy_log.png" alt=""></span>
+
+        <div class="load">
+            <div>
+                <span>验证码登录</span>
+                <span>密码登录</span>
+            </div>
+        </div>
+
+        <form action="" class="forms">
+
+            <section>手机号注册/登录</section>
+            <input type="text" id="inputs" maxlength="15"></br>
+            <section>手机验证码</section>
+            <input type="text" id="inputs" maxlength="5">
+            <button>获取验证码</button>
+            <div class="load_btn">
+                <input type="button" value="登录">
+            </div>
+        </form>
+        <form action="">
+
+            <section>手机号/邮箱/用户名</section>
+            <input type="text" id="inputs" maxlength="18"></br>
+            <section>密码</section>
+            <input type="text" id="inputs" maxlength="18">
+            <div class="load_btn">
+                <input type="button" value="登录">
+            </div>
+        </form>
+        <div class="link">
+            <a href="">遇到问题?</a><a href="">立即注册</a>
+        </div>
+        <p>
+            <span>未注册的手机验证后将自动登录。注册/登录即代表您同意并遵守</span>
+            <a href="" id="link1">《米哈游通行证用户服务协议》</a></br>
+            <a href="">《米哈游通行证用户个人信息及隐私保护政策》</a>
+        </p>
+    </div>
+
+    <script>
+        var btn = document.querySelector('.load').querySelectorAll('span');
+
+        var forms = document.querySelector('.content').querySelectorAll('form');
+
+        btn[0].className = 'chose';
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].setAttribute('index', i);
+            btn[i].onclick = function() {
+                console.log('11');
+                for (var i = 0; i < btn.length; i++) {
+                    var index = this.getAttribute('index');
+                    btn[i].className = '';
+                    forms[i].style.display = 'none';
+                }
+                this.className = 'chose';
+                forms[index].style.display = 'block';
+            }
+        }
+
+
+        var inputs = document.querySelector('.content').querySelectorAll('#inputs');
+
+        var sections = document.querySelector('.content').querySelectorAll('section');
+        console.log(sections);
+        console.log(inputs);
+
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].setAttribute('index', i)
+            inputs[i].onclick = function() {
+                for (var i = 0; i < inputs.length; i++) {
+                    var index = this.getAttribute('index');
+                    sections[i].className = '';
+                    inputs[i].style.borderColor = '#B3B3B3'
+                }
+                sections[index].className = 'animation';
+                this.style.borderColor = '#4ea4dc';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

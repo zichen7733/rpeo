@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            height: 2000px;
+            background: url(images3/bg.jpg) no-repeat;
+            background-size: cover;
+        }
+        
+        .nav {
+            position: fixed;
+            top: -10px;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, .8);
+            border-bottom: 2px solid red;
+            border-color: rgba(64, 206, 255, 0.84);
+            box-shadow: rgba(1, 1, 1, 0.3) 0px 2px 10px 0px;
+            z-index: 10;
+        }
+        
+        .box {
+            position: relative;
+            z-index: 1;
+            width: 1509px;
+            height: 2000px;
+            margin: 0 auto;
+        }
+        
+        .nav .nav_top {
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            width: 1509px;
+            height: 100px;
+            margin: 0 auto;
+            z-index: 10;
+        }
+        
+        .nav_top #left {
+            margin-left: -50px;
+            width: 900px;
+        }
+        
+        .nav .nav_top #left span {
+            display: inline-block;
+            margin-top: 30px;
+            margin-right: 40px;
+            width: 130px;
+            height: 60px;
+            text-align: center;
+        }
+        
+        .nav_top #left span a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .4);
+        }
+        
+        .nav_top #left a em {
+            font-size: 22px;
+            color: #62eaf5;
+        }
+        
+        .nav_top #left a em:hover {
+            color: rgb(255, 255, 255);
+        }
+        
+        .nav_top #right {
+            margin-right: 150px;
+            width: 400px;
+        }
+        
+        .nav_top #right span {
+            width: 200px;
+        }
+        
+        #left span a {
+            text-align: center;
+            line-height: 25px;
+            font-size: 23px;
+            font-weight: 700;
+            color: rgb(98, 234, 245);
+            margin-right: 20px;
+        }
+        
+        #right span a {
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            line-height: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 32px;
+            color: rgba(255, 255, 255, .4);
+        }
+        
+        #right span a em {
+            font-size: 15px;
+            color: rgb(98, 234, 245);
+        }
+        
+        #right span a em:hover {
+            color: #fff;
+        }
+        
+        .box .title {
+            width: 100%;
+            font-size: 60px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 130px;
+            text-align: center;
+        }
+        
+        .box .title em {
+            color: #96dbff;
+            font-size: 47px;
+        }
+        
+        .box .warps {
+            width: 1235px;
+            height: 303px;
+            border: 15px solid red;
+            margin: 50px auto;
+            border-color: rgba(255, 255, 255, .3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .warps section {
+            width: 580px;
+            margin-left: 650px;
+            margin-top: 200px;
+        }
+        
+        .box .warps span {
+            width: 105px;
+            height: 65px;
+            display: inline-block;
+            border: 3px solid blue;
+            border-color: rgba(255, 255, 255, .3);
+        }
+        
+        #bg2 span:hover {
+            border: 3px solid #0097de;
+        }
+        
+        .box .warps img {
+            /* width: 100%; */
+        }
+        
+        .warps #bg1 {
+            position: relative;
+            z-index: -1;
+            margin: -272px auto;
+            display: block;
+            width: 6175px;
+            height: 303px;
+        }
+        
+        .box .warps #bg1 span {
+            display: inline-block;
+            width: 1235px;
+            height: 303px;
+            margin: 0 -5px;
+            animation-name: move;
+            animation-duration: 30s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+        }
+        
+        .walls section {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            width: 1265px;
+            height: 1050px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 10px;
+            margin: 50px auto;
+            z-index: -1;
+        }
+        
+        .walls section div {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            width: 400px;
+            height: 280px;
+            border: 1px solid rgba(255, 255, 255, .9);
+            background-color: rgba(255, 255, 255, .18);
+            border-radius: 5px;
+            margin-top: 30px;
+            z-index: -1;
+        }
+        
+        .walls section div img {
+            position: absolute;
+            width: 384px;
+            height: 216px;
+            overflow: hidden;
+            margin-top: 20px;
+            z-index: 1;
+        }
+        
+        .walls section div a {
+            position: relative;
+            width: 384px;
+            height: 216px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        
+        .walls section div a img {
+            position: absolute;
+            margin: 0 auto;
+            z-index: 1;
+            transition: all 1s;
+        }
+        
+        .walls section div img:hover {
+            transform: scale(1.2, 1.2);
+            transition: all 1s;
+        }
+        
+        .walls section div .article {
+            position: absolute;
+            height: 45px;
+            line-height: 45px;
+            font-size: 23px;
+            font-weight: 700;
+            font-style: italic;
+            top: 205px;
+            border: 0;
+        }
+        
+        .walls {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .walls .choices {
+            position: absolute;
+            z-index: 5;
+            width: 1000px;
+            height: 50px;
+            border: 0;
+            background: 0;
+            top: 950px;
+        }
+        
+        .walls .choices div {
+            position: relative;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            border: 1px solid #0097de;
+            border-radius: 0;
+            background-color: rgba(255, 255, 255, 0);
+        }
+        
+        .walls #choice1 {
+            display: inline-block;
+            line-height: 40px;
+            text-align: center;
+            width: 60px;
+            height: 40px;
+        }
+        
+        .walls #choice1:hover {
+            color: blue;
+        }
+        
+        .walls #choice2 {
+            width: 60px;
+            height: 40px;
+            border: 1px solid #0097de;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 500;
+        }
+        
+        .walls #choice2:hover {
+            background-color: #0097de;
+        }
+        
+        #choiced {
+            background-color: #0097de;
+        }
+        
+        .warps #bg2 .borders {
+            border: 3px solid #0097de;
+        }
+        
+        .walls section {
+            display: none;
+        }
+        
+        .walls .choices {
+            display: flex;
+            position: absolute;
+            width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .walls .walls-box {
+            display: flex;
+        }
+        
+        .nav .nav_top #left span:nth-child(2n) {
+            position: absolute;
+            margin: 25px -44px;
+            width: 40px;
+        }
+        
+        .nav .nav_top #left span img {
+            width: 30px;
+        }
+        
+        @keyframes move {
+            0% {}
+            20% {
+                transform: translateX(-1235px);
+            }
+            40% {
+                transform: translateX(-2470px);
+            }
+            60% {
+                transform: translateX(-3705px);
+            }
+            80% {
+                transform: translateX(-4940px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav_top">
+            <section id="left">
+                <span><a href="案例_崩坏首页.html"><em>官网首页</em></br>HOME</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="案例_作战资讯.html"><em>作战资讯</em></br>MUSIC</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="案例_女武神.html"><em>女武神</em></br>VALKYRIES</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href="javascript:;"><em>动画壁纸</em></br>WALLPAPERS</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+                <span><a href=""><em>官方社区</em></br>FORUM</a></span>
+                <span><img src="images/fg.png" alt=""></span>
+            </section>
+            <section id="right">
+                <span><a href=""><em>米哈游关爱系统</em></br>HOME </a></span>
+                <span><a href=""><em>米哈游通行证</em></br>HOME</a></span>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <!-- 动画start -->
+        <div class="title">
+            动画 /<em> ANIMATION</em>
+        </div>
+        <div class="warps">
+            <section id="bg2">
+                <span class="borders"><img src="images3/bg11.jpg" alt=""></span>
+                <span><img src="images3/bg22.png" alt=""></span>
+                <span><img src="images3/bg33.jpg" alt=""></span>
+                <span><img src="images3/bg44.jpg" alt=""></span>
+                <span><img src="images3/bg55.jpg" alt=""></span>
+            </section>
+            <section id="bg1">
+                <span><img src="images3/bg1.jpg" alt=""></span>
+                <span><img src="images3/bg2.png" alt=""></span>
+                <span><img src="images3/bg3.jpg" alt=""></span>
+                <span><img src="images3/bg4.jpg" alt=""></span>
+                <span><img src="images3/bg5.jpg" alt=""></span>
+            </section>
+        </div>
+        <!-- 动画end -->
+        <!-- 动画壁纸start -->
+        <div class="title">
+            壁纸 /<em> WALLPAPERS</em>
+        </div>
+
+        <div class="walls">
+            <section class="walls-box">
+                <div>
+                    <a href=""><img src="images3/wall1.png" alt=""></a>
+                    <div class="article">四周年</div>
+                </div>
+
+                <div>
+                    <a href=""><img src="images3/wall2.png" alt=""></a>
+                    <div class="article">狂热蓝调Δ</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3.png" alt=""></a>
+                    <div class="article">失落迷迭</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4.png" alt=""></a>
+                    <div class="article">断罪影舞</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5.png" alt=""></a>
+                    <div class="article">雷之律者</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall6.png" alt=""></a>
+                    <div class="article">朔夜观星</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall7.png" alt=""></a>
+                    <div class="article">永寂之赫勒尔</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall8.png" alt=""></a>
+                    <div class="article">辉骑士·月魄</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall9.jpg" alt=""></a>
+                    <div class="article">女武神·荣光</div>
+                </div>
+
+            </section>
+            <section>
+                <div>
+                    <a href=""><img src="images3/wall2-1.jpg" alt=""></a>
+                    <div class="article">云墨丹心</div>
+                </div>
+
+                <div>
+                    <a href=""><img src="images3/wall2-2.jpg" alt=""></a>
+                    <div class="article">夜隐重霞</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-3.jpg" alt=""></a>
+                    <div class="article">三周年</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-4.jpg" alt=""></a>
+                    <div class="article">彼岸双生</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-5.png" alt=""></a>
+                    <div class="article">暮光裁决</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-6.png" alt=""></a>
+                    <div class="article">天使重构</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-7.png" alt=""></a>
+                    <div class="article">幻海童谣</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-8.jpg" alt=""></a>
+                    <div class="article">逐梦双星</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall2-9.jpg" alt=""></a>
+                    <div class="article">快雪迎春</div>
+                </div>
+
+            </section>
+            <section>
+                <div>
+                    <a href=""><img src="images3/wall3-1.jpg" alt=""></a>
+                    <div class="article">苍骑士·月魂</div>
+                </div>
+
+                <div>
+                    <a href=""><img src="images3/wall3-2.jpg" alt=""></a>
+                    <div class="article">圣夜狂想</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-3.jpg" alt=""></a>
+                    <div class="article">猎袭装·影铁</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-4.jpg" alt=""></a>
+                    <div class="article">黯蔷薇</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-5.jpg" alt=""></a>
+                    <div class="article">真红之剑</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-6.jpg" alt=""></a>
+                    <div class="article">原罪猎人</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-7.jpg" alt=""></a>
+                    <div class="article">极地战刃</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-8.jpg" alt=""></a>
+                    <div class="article">空之律者</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall3-9.jpg" alt=""></a>
+                    <div class="article">月下初拥</div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <a href=""><img src="images3/wall4-1.jpg" alt=""></a>
+                    <div class="article">天命之战</div>
+                </div>
+
+                <div>
+                    <a href=""><img src="images3/wall4-2.jpg" alt=""></a>
+                    <div class="article">千年之羽</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-3.jpg" alt=""></a>
+                    <div class="article">月影逐龙</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4.png" alt=""></a>
+                    <div class="article">赤染御魂</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-5.jpg" alt=""></a>
+                    <div class="article">银狼觉醒</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-6.jpg" alt=""></a>
+                    <div class="article">德丽莎·出击</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-7.jpg" alt=""></a>
+                    <div class="article">樱色轮回</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-8.jpg" alt=""></a>
+                    <div class="article">春节</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall4-9.jpg" alt=""></a>
+                    <div class="article">绯樱</div>
+                </div>
+
+            </section>
+
+            <section>
+                <div>
+                    <a href=""><img src="images3/wall5-1.jpg" alt=""></a>
+                    <div class="article">第四律者觉醒</div>
+                </div>
+
+                <div>
+                    <a href=""><img src="images3/wall5-2.jpg" alt=""></a>
+                    <div class="article">七夕</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-3.jpg" alt=""></a>
+                    <div class="article">圣芙蕾雅学园</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-4.jpg" alt=""></a>
+                    <div class="article">天父启动</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-5.jpg" alt=""></a>
+                    <div class="article">银狼的献身</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-6.jpg" alt=""></a>
+                    <div class="article">公主与骑士</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-7.jpg" alt=""></a>
+                    <div class="article">背叛的银狼</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall5-8.jpg" alt=""></a>
+                    <div class="article">宣传绘</div>
+                </div>
+                <div>
+                    <a href=""><img src="images3/wall9.jpg" alt=""></a>
+                    <div class="article">女武神·荣光</div>
+                </div>
+            </section>
+
+            <div class="choices">
+                <span id="choice1">首页</span>
+                <span id="choice2">上一项</span>
+                <div id="choiced">1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <span id="choice2">下一项</span>
+                <span id="choice1">最后页</span>
+            </div>
+
+        </div>
+        <!-- 动画壁纸end -->
+    </div>
+
+    <script>
+        var warps = document.querySelector('.warps');
+        var imgs = warps.querySelectorAll('img');
+        var bg = document.querySelector('#bg1');
+        var bgImg = bg.querySelectorAll('img');
+
+        var spans = bg.querySelectorAll('span')
+        console.log(spans);
+
+        for (var i = 0; i < imgs.length; i++) {
+
+            imgs[i].setAttribute('index', i);
+
+            imgs[i].onclick = function() {
+                console.log('11');
+                for (var i = 0; i < imgs.length; i++) {
+
+                    var index = this.getAttribute('index');
+
+                }
+                warps.style.backgroundImage = 'url(' + bgImg[index].src + ')';
+
+
+
+            }
+        }
+
+        var choice1 = document.querySelector('.choices').querySelectorAll('div');
+
+        var imgs2 = document.querySelector('.walls').querySelectorAll('img')
+
+        var warpBox = document.querySelector('.walls').querySelectorAll('section');
+
+        console.log(warpBox);
+
+        var index = 0;
+
+        var indexs = 0;
+
+
+        for (let i = 0; i < choice1.length; i++) {
+            //自定义属性,记录盒子的索引号
+            choice1[i].setAttribute('index', i);
+            //遍历伪数组中所有盒子
+            choice1[i].onclick = function() {
+                //用排他思想算法,先将所有盒子背景颜色清空
+                for (var i = 0; i < choice1.length; i++) {
+                    choice1[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
+                    warpBox[i].style.display = 'none';
+                }
+
+                //记录下点击的盒子的索引号
+                index = this.getAttribute('index')
+
+                //将点击的盒子背景变色
+                this.style.backgroundColor = '#0097de';
+                warpBox[index].className = '.walls-box';
+                warpBox[index].style.display = 'flex';
+
+            }
+
+            //绑定事件--鼠标经过则使该盒子背景变色
+            choice1[i].onmouseover = function() {
+                this.style.backgroundColor = '#0097de';
+            }
+
+            //绑定事件--鼠标离开则使该盒子恢复原样,并将点击了的盒子背景变色
+            choice1[i].onmouseout = function() {
+                this.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+
+                choice1[index].style.backgroundColor = '#0097de';
+
+            }
+        }
+
+        var bg2 = document.querySelector('#bg2').querySelectorAll('span');
+        console.log(bg2);
+        for (var i = 0; i < bg2.length; i++) {
+
+            bg2[i].onclick = function() {
+                for (var i = 0; i < bg2.length; i++) {
+                    bg2[i].className = '';
+                }
+                this.className = 'borders'
+            }
+        }
+
+        var jump = document.querySelector('.choices').querySelectorAll('#choice1');
+        console.log(jump);
+        for (var i = 0; i < jump.length; i++) {
+
+            jump[i].setAttribute('index', i);
+            jump[i].onclick = function() {
+                var index1 = this.getAttribute('index');
+                console.log(index1);
+                if (index1 == '0') {
+                    for (var i = 0; i < choice1.length; i++) {
+                        choice1[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
+                        warpBox[i].style.display = 'none';
+                    }
+                    choice1[index1].style.backgroundColor = '#0097de';
+                    warpBox[index1].style.display = 'flex';
+                    console.log(index1);
+
+                } else {
+                    for (var i = 0; i < choice1.length; i++) {
+                        choice1[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
+                        warpBox[i].style.display = 'none';
+                    }
+                    choice1[4].style.backgroundColor = '#0097de';
+                    warpBox[4].style.display = 'flex';
+                }
+            }
+        }
+
+        var choice2 = document.querySelector('.choices').querySelectorAll('#choice2');
+        console.log(choice2);
+        for (var i = 0; i < choice2.length; i++) {
+            choice2[i].setAttribute('index', i);
+            choice2[i].onclick = function() {
+
+                // for (var i = 0; i < choice2.length; i++) {
+                //     var index2 = this.getAttribute('index');
+                //     if (index2 == '0') {
+                //         for (var i = 0; i < choice1.length; i++) {
+                //             choice1[i].style.backgroundColor = 'rgba(255, 255, 255, 0)';
+                //             warpBox[i].style.display = 'none';
+                //         }
+                //         if (indexs != '0') {
+                //             // indexs = indexs - 1;
+                //         }
+                //         warpBox[indexs].style.display = 'flex';
+                //     }
+                // }
+            }
+        }
+    </script>
+</body>
+
+</html>

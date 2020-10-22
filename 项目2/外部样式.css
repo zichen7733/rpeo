@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    margin: 0 auto;
+}
+
+body {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 92px;
+    border-bottom: 2px solid rgba(64, 206, 255, 0.84);
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    z-index: 10;
+}
+
+.nav {
+    width: 900px;
+    display: block;
+    position: fixed;
+    left: 200px;
+    z-index: 10;
+}
+
+.bg1 {
+    position: relative;
+    height: 1370px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bk1 .header .nav2 {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.bg1 .bg_video {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-960px);
+    z-index: -1;
+}
+
+.bg1 .logo {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    top: -200px;
+    right: -690px;
+    z-index: 5;
+}
+
+.bg1 .logo img {
+    position: fixed;
+}
+
+.news {
+    display: flex;
+    width: 1200px;
+    height: 300px;
+    margin: 500px auto;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, .6);
+}
+
+.news .home-news {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 600px;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    height: 40px;
+}
+
+.content2 {
+    /* border: 1px solid yellow; */
+    height: 220px;
+}
+
+.content2 span {
+    display: none;
+}
+
+.content2 span:nth-child(1) {
+    display: block;
+}
+
+.news .home-news .title .default1 {
+    background-color: #fff;
+    color: #0097de;
+}
+
+.news .home-news .title span {
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    background-color: #0097de;
+    transform: skew(-20deg);
+    border-radius: 5px;
+}
+
+.content2 span ul li {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #fff;
+}
+
+.content2 span ul li em {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-style: normal;
+    font-size: 20px;
+    color: #fff;
+}
+
+.nav ul {
+    display: flex;
+    margin-top: 28px;
+}
+
+.nav ul li {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.nav ul li a {
+    display: block;
+    line-height: 20px;
+    padding: 0 10px;
+    color: #62EAF5;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: italic;
+    /* margin-top: 30px; */
+    margin-right: 15px;
+    margin-left: 15px;
+    font-family: "Microsoft YaHei", sans-serif;
+    position: relative;
+}
+
+.nav ul li a p {
+    font-size: 19px;
+}
+
+.nav ul li img {
+    width: 25px;
+    height: 50px;
+    margin-left: -80px;
+    position: fixed;
+    top: 20px;
+    z-index: 10;
+}
+
+.nav ul li a:hover {
+    color: #FFFFFF;
+}
+
+.nav em {
+    width: 100%;
+    font-size: 10px;
+    color: #55626B;
+    font-style: normal;
+}
+
+.nav2 {
+    position: relative;
+    top: 30px;
+    right: 150px;
+    width: 100%;
+}
+
+.nav2 ul li a {
+    color: #62EAF5;
+    float: right;
+    font-size: 15px;
+    font-weight: 700;
+    padding-left: 50px;
+}
+
+.nav2 ul li em {
+    width: 100%;
+    font-size: 12px;
+    color: #55628B;
+    font-style: normal;
+    padding-left: 5px;
+    padding-right: 35px;
+}
+
+.banner {
+    height: 1000px;
+    background-image: url(images/bg4.jpg);
+    background-position: center 0;
+    z-index: -1;
+}
+
+.banner .lita {
+    position: relative;
+    margin: 0 auto;
+    left: -100px;
+    width: 1900px;
+}
+
+.banner .lita img {
+    float: left;
+    width: 900px;
+    padding-top: 95px;
+    padding-left: 180px;
+    position: absolute;
+    z-index: 0;
+}
+
+.banner .lita h2 {
+    float: right;
+    margin-top: 160px;
+    margin-right: 220px;
+    color: #fff;
+    font-size: 60px;
+    font-style: italic;
+    position: absolute;
+}
+
+.banner .lita em {
+    float: right;
+    margin-top: 250px;
+    margin-right: 240px;
+    color: #62eaf5;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+}
+
+.banner .lita em,
+.banner .lita h2 {
+    position: absolute;
+    right: 0
+}
+
+.banner2 {
+    width: 100%;
+    height: 600px;
+    margin-top: -25px;
+    background-image: url(images/bg5.jpg);
+    background-size: 1920px 600px;
+    position: relative;
+    z-index: 0;
+    background-position: center 0;
+}
+
+.banner2 .bk1 {
+    float: left;
+    display: inline-block;
+    height: 400px;
+    width: 1200px;
+    margin-left: 100px;
+    margin-top: 140px;
+    border: 1.5px solid #269AD1;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    margin-left: -700px;
+}
+
+.banner2 .bk1 .lxfs {
+    height: 380px;
+    width: 1150px;
+    float: left;
+    padding-left: 100px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    background-color: #2E448F;
+}
+
+.banner2 .lxfs .tb img {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    margin-top: 30px;
+    background-color: #49A6DE;
+    border-radius: 15px;
+}
+
+.banner2 .yayi img {
+    float: right;
+    width: 800px;
+    margin-right: 300px;
+    position: absolute;
+    bottom: -60px;
+    left: 60%;
+    z-index: 0;
+}
+
+.banner2 .bk1 .lxfs .text ul li {
+    display: inline-block;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 18px;
+    margin-right: 15px;
+    margin-left: 10px;
+    width: 90px;
+    font-weight: 700;
+}
+
+.video_lt {
+    position: relative;
+    width: 260px;
+    height: 150px;
+    border: 2px solid red;
+}
+
+.video_lt span video {
+    position: absolute;
+    z-index: 2;
+    width: 250px;
+    border: 5px solid red;
+    border-radius: 5px;
+    border-color: rgba(71, 33, 33, 0.2);
+}
+
+.download {
+    position: relative;
+    width: 400px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    left: 50%;
+    top: 60%;
+}
+
+.download img {
+    position: absolute;
+    z-index: 7;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.download .button {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    background-image: url(images/an.png);
+    background-size: 70px;
+    background-color: transparent;
+    z-index: 8;
+    left: -200px;
+    top: 30px;
+}
+
+.download .button:hover {
+    background-image: url(images/an2.png);
+}
+
+@keyframes move {
+    0% {}
+    100% {
+        transform: translateY(90px);
+    }
+}
+
+.download #wx img {
+    width: 100px;
+    left: 15px;
+    top: 18px;
+}
+
+.download #ewm2 img {
+    left: 10px;
+    top: 20px;
+    animation: move 2s linear infinite;
+    z-index: 8;
+}
+
+.download #dl1 {
+    background-color: #33C8FF;
+    color: #fff;
+    top: 10%;
+}
+
+.download #dl2 {
+    background-color: #4EB700;
+    color: #fff;
+    top: 50%;
+}
+
+.download #dl1 a,
+.download #dl2 a {
+    color: #fff;
+}
+
+#dl1 img,
+#dl2 img {
+    position: absolute;
+    left: -3%;
+}
+
+.download #dl1,
+#dl2 {
+    width: 180px;
+    height: 50px;
+    position: absolute;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 15px;
+    left: 50%;
+}
+
+.download span video {
+    position: absolute;
+    border: 6px solid;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    left: -300px;
+}
+
+.phoneNumber {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    top: 200px;
+    left: 30px;
+}
+
+.phoneNumber h3 {
+    position: absolute;
+    color: #fff;
+    font-style: italic;
+}
+
+.phoneNumber h3 span {
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    border: 1px solid #2070BE;
+    top: 15px;
+    left: 120px;
+}
+
+.phoneNumber ul li,
+.phoneNumber2 ul li {
+    font-size: 13px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 30px;
+}
+
+.phoneNumber2 {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    left: 450px;
+}
+
+.phoneNumber2 h3 {
+    position: absolute;
+    color: #fff;
+    font-style: italic;
+}
+
+.phoneNumber2 h3 span {
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    border: 1px solid #2070BE;
+    top: 15px;
+    left: 120px;
+}
+
+.end {
+    height: 400px;
+    background-color: #000;
+}
+
+@keyframes rotates {
+    0% {}
+    100% {
+        transform: rotateY(-60deg);
+    }
+}
